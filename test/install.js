@@ -11,6 +11,10 @@ exports['Install module'] = function (test) {
     
     process.chdir(__dirname);
     
+    ajgenesis.createDirectory('build');
+    
+    process.chdir('build');
+    
     entity.install(ajgenesis, function (err, data) {
         test.ok(!err);
         test.ok(fs.existsSync('ajgenesis'));
